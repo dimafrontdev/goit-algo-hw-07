@@ -40,25 +40,6 @@ def sum_of_values(node):
     return node.value + sum_of_values(node.left) + sum_of_values(node.right)
 
 
-def visualize_tree(node):
-    if not node:
-        print("Дерево порожнє")
-        return
-
-    queue = deque([node])
-    while queue:
-        level_size = len(queue)
-        for i in range(level_size):
-            current = queue.popleft()
-            print(current.value, end=" ")
-
-            if current.left:
-                queue.append(current.left)
-            if current.right:
-                queue.append(current.right)
-        print()
-
-
 # Створення дерева
 root = TreeNode(5)
 root.left = TreeNode(3)
